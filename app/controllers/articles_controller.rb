@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @q = Article.ransack(params[:q]) # pasamos el articulo a los parametros de la consulta
+    @articles = @q.result(distinct: true)    # ponemos esto enves de Article.all  | solo devolvera un registro no importa si hay dos registros iguales solo tomara 1
   end
 
   # GET /articles/1 or /articles/1.json

@@ -1,0 +1,13 @@
+<%= search_form_for @q do |f| %>
+
+    <%= f.label :title_cont %>
+    <%= f.search_field :title_cont %>
+
+    <%= f.label :body_cont %>
+    <%= f.search_field :body_cont %>
+
+    <%= f.label :title_or_body_cont %>
+    <%= f.search_field :title_or_body_cont, placeholder:"Search..." %>
+
+    <%= f.submit "Search!!!" %>
+<% end %>
